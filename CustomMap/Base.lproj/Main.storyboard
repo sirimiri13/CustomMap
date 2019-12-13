@@ -19,12 +19,27 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fPS-WN-Qej">
+                                <rect key="frame" x="364" y="179" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="location" catalog="system"/>
+                                <connections>
+                                    <action selector="getDirectionTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SHQ-Xp-qGW"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="a4X-u0-RFa"/>
+                    <navigationItem key="navigationItem" id="a4X-u0-RFa">
+                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="pSe-GJ-0RJ">
+                            <connections>
+                                <segue destination="EfB-lO-ga3" kind="presentation" modalPresentationStyle="fullScreen" id="7qj-8o-v1H"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
+                        <outlet property="getDirectionButton" destination="fPS-WN-Qej" id="VTq-EV-4lc"/>
                         <outlet property="mapView" destination="bfq-27-bMQ" id="C0Z-fh-pYy"/>
                     </connections>
                 </viewController>
@@ -40,9 +55,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" id="Vkt-vm-A96">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </searchBar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellLocation" textLabel="tok-MB-ghj" rowHeight="92" style="IBUITableViewCellStyleDefault" id="xXl-mM-e7L">
-                                <rect key="frame" x="0.0" y="28" width="414" height="92"/>
+                                <rect key="frame" x="0.0" y="72" width="414" height="92"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xXl-mM-e7L" id="7vQ-eD-LqW">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="92"/>
@@ -64,15 +84,24 @@
                             <outlet property="delegate" destination="Lc6-fr-LBI" id="5J7-LN-rGh"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="f3D-UP-OEn"/>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="f3D-UP-OEn">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="cbZ-xS-4h8">
+                            <connections>
+                                <action selector="cancelTapped:" destination="Lc6-fr-LBI" id="AL5-ab-XIu"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="searchBar" destination="Vkt-vm-A96" id="hgh-hB-T24"/>
                         <segue destination="vpu-QM-LVn" kind="unwind" identifier="unwindToMapSegue" unwindAction="unwindToMapViewWithSegue:" id="PL4-Ms-f8q"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CFr-43-Iqa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="vpu-QM-LVn" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2895.6521739130435" y="-171.42857142857142"/>
+            <point key="canvasLocation" x="3804.347826086957" y="-171.42857142857142"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="zss-3g-Jzz">
@@ -93,22 +122,25 @@
             <point key="canvasLocation" x="137.68115942028987" y="103.79464285714285"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="Llr-Pa-Y7a">
+        <scene sceneID="7y7-Fm-wHb">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vBn-do-BLB" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="EfB-lO-ga3" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="NsD-zt-oMp">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="DYJ-Lm-sbK">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="Lc6-fr-LBI" kind="relationship" relationship="rootViewController" id="xTq-kz-uLx"/>
+                        <segue destination="Lc6-fr-LBI" kind="relationship" relationship="rootViewController" id="yT1-BD-D9b"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="i2Z-nl-KYc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4iv-nd-Si4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1985.5072463768117" y="-171.42857142857142"/>
+            <point key="canvasLocation" x="2894.202898550725" y="-171.42857142857142"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="location" catalog="system" width="64" height="56"/>
+    </resources>
 </document>
