@@ -129,8 +129,13 @@ class LocationTableViewController: UITableViewController, UISearchResultsUpdatin
     }
     
     override func tableView(_ tableView: UITableView, didHighlightRowAt indexPath: IndexPath) {
-          let index = indexPath.row
+       let index = indexPath.row
+        if(isSearch){
+            selectedLocation = filterSearchBar[index]
+        }
+        else {
             selectedLocation = listLocation[index]
+        }
           performSegue(withIdentifier: "unwindToMapSegue", sender: self)
 
       }

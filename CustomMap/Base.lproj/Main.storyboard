@@ -15,12 +15,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="bfq-27-bMQ">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="bfq-27-bMQ">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </mapView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fPS-WN-Qej">
-                                <rect key="frame" x="364" y="179" width="50" height="50"/>
+                                <rect key="frame" x="3" y="87" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="location" catalog="system"/>
                                 <connections>
@@ -29,6 +28,12 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="bfq-27-bMQ" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Dsf-zZ-xzd"/>
+                            <constraint firstItem="bfq-27-bMQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Xfm-jE-1O9"/>
+                            <constraint firstAttribute="bottom" secondItem="bfq-27-bMQ" secondAttribute="bottom" id="dVd-Yh-ons"/>
+                            <constraint firstItem="bfq-27-bMQ" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="pHl-qV-qYp"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="a4X-u0-RFa">
